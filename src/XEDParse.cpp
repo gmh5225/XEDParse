@@ -3,6 +3,16 @@
 #include "Parser.h"
 #include "Translator.h"
 #include "ParseTest.h"
+#include <io.h>
+#include <stdio.h>
+
+//VS2019/VS2022
+FILE _iob[] = { *stdin, *stdout, *stderr };
+
+extern "C" FILE* __cdecl __iob_func(void)
+{
+    return _iob;
+}
 
 void XEDParseSetMode(bool X64, xed_state_t* State)
 {
