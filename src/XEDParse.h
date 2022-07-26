@@ -4,6 +4,10 @@
 #include <windows.h>
 
 //XEDParse defines
+
+//set static lib
+#define XEDPARSE_STATIC
+
 #ifdef XEDPARSE_STATIC
 #define XEDPARSE_EXPORT
 #else
